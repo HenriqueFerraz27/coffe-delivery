@@ -9,7 +9,7 @@ export const brandColor = {
     secondary: '#8047F8',
     tertiary: '#4B2995',
   },
-}
+} as const
 
 export const typography = {
   family: {
@@ -35,4 +35,4 @@ export const typography = {
   lineHeight: {
     base: 1.6,
   },
-}
+} as const

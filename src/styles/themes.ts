@@ -22,4 +22,4 @@ export const darkTheme = {
     },
   },
   typography,
-}
+} as const
