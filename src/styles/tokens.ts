@@ -25,7 +25,8 @@ export const typography = {
     xl: '1.25rem',
     '2xl': '1.5rem',
     '3xl': '2rem',
-    '4xl': '3rem',
+    '4xl': '2.5rem',
+    '5xl': '3rem',
   },
   weight: {
     regular: 400,
@@ -33,6 +34,6 @@ export const typography = {
     extraBold: 800,
   },
   lineHeight: {
-    base: 1.6,
+    base: 1.3,
   },
 } as const
