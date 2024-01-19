@@ -5,4 +5,8 @@ export const Container = styled.div`
   max-width: ${pxToRem(1440)};
   width: 86%;
   margin: auto;
+
+  @media (min-width: 768px) {
+    width: 76%;
+  }
 `

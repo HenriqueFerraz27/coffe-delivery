@@ -1,10 +1,10 @@
-import { Header } from '../components'
+import { Banner, Header } from '../components'
 
 function Home() {
   return (
     <>
       <Header />
-      <h1>Home</h1>
+      <Banner />
     </>
   )
 }
