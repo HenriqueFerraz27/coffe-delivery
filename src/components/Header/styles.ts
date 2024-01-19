@@ -1,16 +1,12 @@
 import styled from 'styled-components'
 import { pxToRem } from '../../utils/pxToRem'
-
-export const Container = styled.div`
-  max-width: ${pxToRem(768)};
-  width: 86%;
-  margin: auto;
-`
+import { Container } from '../../styles/components/container'
 
 export const Header = styled(Container).attrs({ as: 'header' })`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: ${pxToRem(20)};
   min-height: ${pxToRem(100)};
 
   h1 img {
@@ -29,36 +25,36 @@ export const Header = styled(Container).attrs({ as: 'header' })`
       width: ${pxToRem(22)};
       height: ${pxToRem(22)};
     }
-
-    input,
-    a {
+    a,
+    button {
       min-height: ${pxToRem(38)};
     }
   }
 `
 
 export const Location = styled.li`
-  position: relative;
-  border-radius: ${pxToRem(6)};
-  background-color: ${({ theme }) => theme.color.brand.purple.primary};
-
-  svg {
-    position: absolute;
-    top: 50%;
-    margin-left: ${pxToRem(8)};
-    color: ${({ theme }) => theme.color.brand.purple.secondary};
-    transform: translateY(-50%);
-  }
-
-  input {
-    width: ${pxToRem(190)};
-    padding-left: ${pxToRem(36)};
-    padding-right: ${pxToRem(8)};
+  button {
+    align-items: center;
+    gap: ${pxToRem(4)};
+    padding: 0 ${pxToRem(8)};
     color: ${({ theme }) => theme.color.brand.purple.tertiary};
     font-size: ${({ theme }) => theme.typography.size.sm};
-    border: none;
     border-radius: ${pxToRem(6)};
-    background-color: transparent;
+    background-color: ${({ theme }) => theme.color.brand.purple.primary};
+
+    svg {
+      color: ${({ theme }) => theme.color.brand.purple.secondary};
+    }
+
+    span {
+      display: none;
+    }
+
+    @media (min-width: 500px) {
+      span {
+        display: initial;
+      }
+    }
   }
 `
 
