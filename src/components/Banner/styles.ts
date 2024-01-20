@@ -3,7 +3,7 @@ import { pxToRem } from '../../utils/pxToRem'
 import { Container } from '../../styles/components/container'
 
 export const Banner = styled.section`
-  padding: ${pxToRem(50)} 0;
+  padding: ${pxToRem(90)} 0;
   background-image: url('/banner/background-mobile.png');
   background-size: cover;
   background-repeat: no-repeat;

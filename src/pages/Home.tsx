@@ -1,10 +1,14 @@
-import { Banner, Header } from '../components'
+import { Banner, CoffeeList, Header } from '../components'
 
 function Home() {
   return (
     <>
       <Header />
       <Banner />
+
+      <main>
+        <CoffeeList/>
+      </main>
     </>
   )
 }
