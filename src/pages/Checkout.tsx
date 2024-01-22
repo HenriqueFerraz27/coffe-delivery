@@ -1,8 +1,9 @@
-import { Sucess } from '../components'
+import { Cart, Sucess } from '../components'
 
 function Checkout() {
   return (
     <>
+      <Cart />
       <Sucess />
     </>
   )
