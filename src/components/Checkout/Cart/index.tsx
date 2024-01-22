@@ -1,3 +1,4 @@
+import { Adress } from '../../'
 import * as S from './styles'
 
 export const Cart = () => {
@@ -7,8 +8,8 @@ export const Cart = () => {
         <h2>Complete seu pedido</h2>
 
         <div className='container'>
-          {/* <Adress />
-          <Payment /> */}
+          <Adress />
+          {/* <Payment /> */}
         </div>
       </S.CartArticle>
 
