@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { pxToRem } from '../../utils/pxToRem'
-import { Container } from '../../styles/components/container'
+import { Container } from '../../styles/components'
 
 export const Banner = styled.section`
   padding: ${pxToRem(90)} 0;

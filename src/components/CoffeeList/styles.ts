@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Container } from '../../styles/components/container'
+import { Container } from '../../styles/components'
 import { pxToRem } from '../../utils/pxToRem'
 
 export const CoffeeListArticle = styled(Container).attrs({ as: 'article' })`

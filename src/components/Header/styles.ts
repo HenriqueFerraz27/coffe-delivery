@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { pxToRem } from '../../utils/pxToRem'
-import { Container } from '../../styles/components/container'
+import { Container } from '../../styles/components'
 
 export const Header = styled(Container).attrs({ as: 'header' })`
   display: flex;

@@ -1,3 +1,4 @@
+import * as Styled from '../../../styles/components'
 import * as S from './styles'
 import * as Icon from 'phosphor-react'
 
@@ -23,13 +24,13 @@ export const CoffeeItem = () => {
         <strong>R$ 9,90</strong>
 
         <div>
-          <div className='item-buy__counter'>
+          <Styled.CouterButton>
             <input type='number' defaultValue={1} min={1} readOnly />
             <div>
               <span>--</span>
               <span>+</span>
             </div>
-          </div>
+          </Styled.CouterButton>
           <button>
             <Icon.ShoppingCart weight='fill' />
           </button>

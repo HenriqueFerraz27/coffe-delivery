@@ -115,21 +115,6 @@ export const ItemBuy = styled.div`
       }
     }
 
-    input {
-      width: ${pxToRem(72)};
-      height: ${pxToRem(38)};
-      color: ${({ theme }) => theme.color.basic.base.primary};
-      text-align: center;
-      border: none;
-      border-radius: ${pxToRem(6)};
-      background-color: ${({ theme }) => theme.color.basic.support.tertiary};
-
-      &::-webkit-inner-spin-button,
-      &::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-      }
-    }
-
     button {
       width: ${pxToRem(38)};
       height: ${pxToRem(38)};
