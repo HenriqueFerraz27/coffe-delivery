@@ -48,10 +48,28 @@ export const PaymentOptions = styled.div`
     color: ${({ theme }) => theme.color.basic.base.secondary};
     border-radius: ${pxToRem(7)};
     background-color: ${({ theme }) => theme.color.basic.support.tertiary};
+    transition: all 0.1s;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.color.basic.support.secondary};
+
+      svg {
+        color: ${({ theme }) => theme.color.brand.yellow.secondary};
+      }
+    }
+
+    &:focus {
+      background-color: ${({ theme }) => theme.color.basic.support.secondary};
+
+      svg {
+        color: ${({ theme }) => theme.color.brand.yellow.secondary};
+      }
+    }
 
     svg {
       min-width: ${pxToRem(16)};
       min-height: ${pxToRem(16)};
+      transition: all 0.1s;
     }
   }
 

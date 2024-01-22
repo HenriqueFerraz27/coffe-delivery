@@ -52,6 +52,11 @@ export const AdressForm = styled.form`
     border: none;
     border-radius: ${pxToRem(4)};
     background-color: ${({ theme }) => theme.color.basic.support.secondary};
+    transition: all 0.1s;
+
+    &:hover {
+      outline: 2px solid ${({ theme }) => theme.color.brand.yellow.secondary};
+    }
 
     &:focus {
       outline: 2px solid ${({ theme }) => theme.color.brand.yellow.tertiary};

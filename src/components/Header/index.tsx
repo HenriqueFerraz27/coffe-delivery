@@ -6,9 +6,14 @@ import * as Icon from 'phosphor-react'
 export const Header = () => {
   return (
     <S.Header>
-      <NavLink to='/' title='Coffe Delivery'>
-        <img src={logoCoffeeDeliveryHorizontal} alt='Coffee Delivery - Logo' />
-      </NavLink>
+      <h2>
+        <NavLink to='/' title='Coffe Delivery'>
+          <img
+            src={logoCoffeeDeliveryHorizontal}
+            alt='Coffee Delivery - Logo'
+          />
+        </NavLink>
+      </h2>
 
       <nav>
         <ul>

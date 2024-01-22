@@ -110,6 +110,14 @@ export const BannerList = styled.ul`
     align-items: center;
     gap: ${pxToRem(12)};
 
+    &:nth-child(odd) span {
+      background-color: ${({ theme }) => theme.color.brand.purple.secondary};
+    }
+
+    &:nth-child(even) span {
+      background-color: ${({ theme }) => theme.color.brand.yellow.secondary};
+    }
+
     span {
       display: flex;
       justify-content: center;
@@ -117,7 +125,6 @@ export const BannerList = styled.ul`
       min-width: ${pxToRem(32)};
       min-height: ${pxToRem(32)};
       border-radius: 100%;
-      background-color: ${({ theme }) => theme.color.brand.purple.secondary};
     }
 
     svg {

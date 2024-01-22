@@ -4,6 +4,11 @@ import { pxToRem } from '../../utils/pxToRem'
 export const CouterButton = styled.div`
   display: inline-block;
   position: relative;
+  transition: all 0.1s;
+
+  &:hover input {
+    outline: 2px solid #996dff;
+  }
 
   input {
     width: ${pxToRem(72)};
@@ -13,6 +18,7 @@ export const CouterButton = styled.div`
     border: none;
     border-radius: ${pxToRem(6)};
     background-color: ${({ theme }) => theme.color.basic.support.tertiary};
+    transition: all 0.1s;
 
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
@@ -33,8 +39,13 @@ export const CouterButton = styled.div`
       color: ${({ theme }) => theme.color.brand.purple.secondary};
       font-size: ${({ theme }) => theme.typography.size['2xl']};
       line-height: 0;
-      letter-spacing: -1px;
+      letter-spacing: -2px;
       cursor: pointer;
+      transition: all 0.1s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 `

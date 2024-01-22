@@ -127,11 +127,21 @@ export const ItemDelete = styled.button`
   text-transform: uppercase;
   border-radius: ${pxToRem(6)};
   background-color: ${({ theme }) => theme.color.basic.support.tertiary};
+  transition: all 0.1s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.basic.support.secondary};
+
+    svg {
+      color: ${({ theme }) => theme.color.brand.yellow.secondary};
+    }
+  }
 
   svg {
     width: ${pxToRem(16)};
     height: ${pxToRem(16)};
     color: ${({ theme }) => theme.color.brand.purple.secondary};
+    transition: all 0.1s;
   }
 
   @media (min-width: 425px) {
@@ -175,8 +185,17 @@ export const CoffeesTotal = styled.div`
 export const ConfirmButton = styled.button`
   height: ${pxToRem(46)};
   width: 100%;
-  color: ${({ theme }) => theme.color.basic.auxiliary.tertiary};
+  color: ${({ theme }) => theme.color.basic.auxiliary.secondary};
   font-weight: ${({ theme }) => theme.typography.weight.bold};
   border-radius: ${pxToRem(6)};
   background-color: ${({ theme }) => theme.color.brand.yellow.secondary};
+  transition: all 0.1s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.brand.yellow.tertiary};
+  }
+
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.color.brand.yellow.secondary};
+  }
 `

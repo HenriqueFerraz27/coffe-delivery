@@ -12,6 +12,16 @@ export const CoffeeItem = styled.li`
   border-top-right-radius: ${pxToRem(40)};
   border-bottom-left-radius: ${pxToRem(40)};
   background-color: ${({ theme }) => theme.color.basic.auxiliary.secondary};
+  transition: all 0.1s;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: ${({ theme }) => theme.color.basic.auxiliary.primary};
+
+    svg {
+      color: ${({ theme }) => theme.color.basic.auxiliary.primary};
+    }
+  }
 `
 
 export const ItemContainer = styled.div`
@@ -93,38 +103,21 @@ export const ItemBuy = styled.div`
     display: flex;
     gap: ${pxToRem(8)};
 
-    .item-buy__counter {
-      position: relative;
-
-      div {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0 ${pxToRem(8)};
-
-        span {
-          color: ${({ theme }) => theme.color.brand.purple.secondary};
-          font-size: ${({ theme }) => theme.typography.size['2xl']};
-          line-height: 0;
-          letter-spacing: -1px;
-          cursor: pointer;
-        }
-      }
-    }
-
     button {
       width: ${pxToRem(38)};
       height: ${pxToRem(38)};
       border-radius: ${pxToRem(6)};
       background-color: ${({ theme }) => theme.color.brand.purple.tertiary};
+      transition: all 0.1s;
 
       svg {
         width: ${pxToRem(22)};
         height: ${pxToRem(22)};
         color: ${({ theme }) => theme.color.basic.auxiliary.secondary};
+      }
+
+      &:hover {
+        background-color: ${({ theme }) => theme.color.brand.purple.secondary};
       }
     }
   }
