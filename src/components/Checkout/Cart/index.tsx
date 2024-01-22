@@ -1,4 +1,4 @@
-import { Adress } from '../../'
+import { Adress, Payment } from '../../'
 import * as S from './styles'
 
 export const Cart = () => {
@@ -9,7 +9,7 @@ export const Cart = () => {
 
         <div className='container'>
           <Adress />
-          {/* <Payment /> */}
+          <Payment />
         </div>
       </S.CartArticle>
 
