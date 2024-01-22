@@ -40,6 +40,10 @@ export const Header = styled(Container).attrs({ as: 'header' })`
 export const Location = styled.li`
   transition: all 0.1s;
 
+  &:hover {
+    transform: scale(1.05);
+  }
+
   button {
     align-items: center;
     gap: ${pxToRem(4)};
@@ -56,22 +60,22 @@ export const Location = styled.li`
     span {
       display: none;
     }
-
-    @media (min-width: 500px) {
-      span {
-        display: initial;
-      }
-    }
   }
 
-  &:hover {
-    transform: scale(1.05);
+  @media (min-width: 576px) {
+    button span {
+      display: initial;
+    }
   }
 `
 
 export const Cart = styled.li`
   background-color: ${({ theme }) => theme.color.brand.yellow.primary};
   transition: all 0.1s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   a {
     padding: 0 ${pxToRem(8)};
@@ -83,9 +87,5 @@ export const Cart = styled.li`
     svg {
       color: ${({ theme }) => theme.color.brand.yellow.secondary};
     }
-  }
-
-  &:hover {
-    transform: scale(1.05);
   }
 `

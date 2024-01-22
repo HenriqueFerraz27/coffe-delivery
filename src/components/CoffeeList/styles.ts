@@ -20,7 +20,7 @@ export const CoffeeList = styled.ul`
   gap: ${pxToRem(48)} ${pxToRem(32)};
   margin-top: ${pxToRem(60)};
 
-  @media (min-width: 600px) {
+  @media (min-width: 576px) {
     grid-template-columns: repeat(2, 1fr);
   }
 

@@ -110,14 +110,14 @@ export const ItemBuy = styled.div`
       background-color: ${({ theme }) => theme.color.brand.purple.tertiary};
       transition: all 0.1s;
 
+      &:hover {
+        background-color: ${({ theme }) => theme.color.brand.purple.secondary};
+      }
+
       svg {
         width: ${pxToRem(22)};
         height: ${pxToRem(22)};
         color: ${({ theme }) => theme.color.basic.auxiliary.secondary};
-      }
-
-      &:hover {
-        background-color: ${({ theme }) => theme.color.brand.purple.secondary};
       }
     }
   }

@@ -73,11 +73,6 @@ export const PaymentOptions = styled.div`
     }
   }
 
-  @media (min-width: 660px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   @media (min-width: 768px) {
     display: flex;
   }

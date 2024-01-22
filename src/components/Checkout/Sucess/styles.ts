@@ -27,7 +27,7 @@ export const Sucess = styled(Container).attrs({ as: 'section' })`
     }
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 576px) {
     .sucess {
       &__container {
         grid-template-columns: 1fr 1fr;
@@ -49,7 +49,7 @@ export const Sucess = styled(Container).attrs({ as: 'section' })`
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 896px) {
     .sucess__infos {
       &__01 {
         display: block;

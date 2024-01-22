@@ -36,7 +36,7 @@ export const AdressForm = styled.form`
   gap: ${pxToRem(12)};
   margin-top: ${pxToRem(32)};
 
-  @media (min-width: 425px) {
+  @media (min-width: 432px) {
     display: grid;
     grid-template-areas:
       'a1 a2 a2 a3'
@@ -66,7 +66,7 @@ export const AdressForm = styled.form`
       color: ${({ theme }) => theme.color.basic.base.tertiary};
     }
 
-    @media (min-width: 425px) {
+    @media (min-width: 432px) {
       &:nth-child(1) {
         grid-area: a1;
         max-width: ${pxToRem(100)};

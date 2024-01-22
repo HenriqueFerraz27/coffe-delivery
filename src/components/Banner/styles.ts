@@ -9,7 +9,7 @@ export const Banner = styled.section`
   background-repeat: no-repeat;
   background-position: center;
 
-  @media (min-width: 600px) {
+  @media (min-width: 576px) {
     background-image: url('/banner/background-desktop.png');
   }
 `
@@ -17,14 +17,13 @@ export const BannerContainer = styled(Container)``
 
 export const BannerWrapper = styled.div`
   display: grid;
-  grid-template-rows: auto auto;
   gap: ${pxToRem(60)};
 
   .banner__img img {
     width: 100%;
   }
 
-  @media (min-width: 425px) {
+  @media (min-width: 432px) {
     .banner__img {
       display: flex;
       justify-content: center;
@@ -35,7 +34,7 @@ export const BannerWrapper = styled.div`
     }
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 672px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: initial;
 
@@ -47,6 +46,10 @@ export const BannerWrapper = styled.div`
         max-width: initial;
       }
     }
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: 54% auto;
   }
 
   @media (min-width: 1024px) {
@@ -78,7 +81,7 @@ export const TitleAndDescription = styled.div`
     line-height: ${({ theme }) => theme.typography.lineHeight.base};
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 672px) {
     text-align: left;
 
     p {
@@ -134,13 +137,13 @@ export const BannerList = styled.ul`
     }
   }
 
-  @media (min-width: 450px) {
+  @media (min-width: 432px) {
     li {
       font-size: ${({ theme }) => theme.typography.size.lg};
     }
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 576px) {
     grid-template-columns: ${pxToRem(260)} auto;
     margin-top: ${pxToRem(20)};
 

@@ -12,7 +12,7 @@ export const Coffees = styled.section`
   overflow: hidden;
   background-color: ${({ theme }) => theme.color.basic.auxiliary.secondary};
 
-  @media (min-width: 600px) {
+  @media (min-width: 672px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: ${pxToRem(24)};
@@ -30,12 +30,12 @@ export const Coffees = styled.section`
 export const CoffeesList = styled.ul`
   display: grid;
 
-  @media (min-width: 425px) {
+  @media (min-width: 432px) {
     grid-template-columns: 1fr 1fr;
     gap: ${pxToRem(24)};
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 672px) {
     display: block;
   }
 `
@@ -88,11 +88,11 @@ export const CoffeeItem = styled.li`
     }
   }
 
-  @media (min-width: 425px) {
+  @media (min-width: 432px) {
     width: 100%;
     padding-top: initial;
 
-    &:nth-last-child(2) {
+    &:nth-last-child(2):not(&:nth-last-child(2)) {
       border-bottom: none;
     }
 
@@ -103,7 +103,7 @@ export const CoffeeItem = styled.li`
     }
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 672px) {
     padding: ${pxToRem(24)} 0;
 
     &:nth-last-child(2) {
@@ -144,13 +144,13 @@ export const ItemDelete = styled.button`
     transition: all 0.1s;
   }
 
-  @media (min-width: 425px) {
+  @media (min-width: 432px) {
     position: absolute;
     top: 0;
     right: 0;
   }
 
-  @media (min-width: 425px) {
+  @media (min-width: 672px) {
     position: initial;
   }
 `
@@ -171,7 +171,7 @@ export const CoffeesTotal = styled.div`
     }
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 672px) {
     border-top: none;
     padding-top: initial;
   }
