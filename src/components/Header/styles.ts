@@ -37,39 +37,8 @@ export const Header = styled(Container).attrs({ as: 'header' })`
   }
 `
 
-export const Location = styled.li`
-  transition: all 0.1s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  button {
-    align-items: center;
-    gap: ${pxToRem(4)};
-    padding: 0 ${pxToRem(8)};
-    color: ${({ theme }) => theme.color.brand.purple.tertiary};
-    font-size: ${({ theme }) => theme.typography.size.sm};
-    border-radius: ${pxToRem(6)};
-    background-color: ${({ theme }) => theme.color.brand.purple.primary};
-
-    svg {
-      color: ${({ theme }) => theme.color.brand.purple.secondary};
-    }
-
-    span {
-      display: none;
-    }
-  }
-
-  @media (min-width: 576px) {
-    button span {
-      display: initial;
-    }
-  }
-`
-
 export const Cart = styled.li`
+  position: relative;
   background-color: ${({ theme }) => theme.color.brand.yellow.primary};
   transition: all 0.1s;
 
@@ -86,6 +55,27 @@ export const Cart = styled.li`
 
     svg {
       color: ${({ theme }) => theme.color.brand.yellow.secondary};
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: ${pxToRem(20)};
+      min-height: ${pxToRem(20)};
+      border-radius: 100%;
+      background-color: ${({ theme }) => theme.color.brand.yellow.secondary};
+      transform: translate(50%, -50%);
+
+      strong {
+        margin-bottom: -1px;
+        color: ${({ theme }) => theme.color.basic.auxiliary.tertiary};
+        font-size: ${({ theme }) => theme.typography.size.xs};
+        line-height: 0.5;
+      }
     }
   }
 `

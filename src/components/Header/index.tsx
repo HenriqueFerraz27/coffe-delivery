@@ -2,8 +2,12 @@ import { NavLink } from 'react-router-dom'
 import * as S from './styles'
 import logoCoffeeDeliveryHorizontal from '/logos/coffee-delivery-horizontal.svg'
 import * as Icon from 'phosphor-react'
+import { useCartItems } from '../../hooks/useCartItems'
+import { Location } from '..'
 
 export const Header = () => {
+  const { cartItems } = useCartItems()
+
   return (
     <S.Header>
       <h2>
@@ -17,14 +21,17 @@ export const Header = () => {
 
       <nav>
         <ul>
-          <S.Location>
-            <button>
-              <Icon.MapPin weight='fill' /> <span>Santo André, SP</span>
-            </button>
-          </S.Location>
+          <li>
+            <Location />
+          </li>
           <S.Cart>
             <NavLink to='/checkout' title='Cart'>
               <Icon.ShoppingCart weight='fill' />
+              {cartItems.length >= 1 && (
+                <span>
+                  <strong>{cartItems.length}</strong>
+                </span>
+              )}
             </NavLink>
           </S.Cart>
         </ul>
