@@ -1,4 +1,5 @@
 import { CoffeeItem } from '..'
+import { coffees } from '../../datas/coffees.json'
 import * as S from './styles'
 
 export const CoffeeList = () => {
@@ -7,14 +8,12 @@ export const CoffeeList = () => {
       <h2>Nossos Cafés</h2>
 
       <S.CoffeeList>
-        <CoffeeItem />
-        <CoffeeItem />
-        <CoffeeItem />
-        <CoffeeItem />
-        <CoffeeItem />
-        <CoffeeItem />
-        <CoffeeItem />
-        <CoffeeItem />
+        {coffees.map(coffee => {
+          return (
+            <CoffeeItem coffee={coffee}
+            />
+          )
+        })}
       </S.CoffeeList>
     </S.CoffeeListArticle>
   )

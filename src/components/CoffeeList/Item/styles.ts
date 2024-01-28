@@ -44,6 +44,12 @@ export const ItemHeader = styled.header`
     margin-top: calc(-1.875rem + -1.5rem);
   }
 
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: ${pxToRem(8)};
+  }
+
   span {
     display: flex;
     align-items: center;
