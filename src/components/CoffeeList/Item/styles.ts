@@ -128,9 +128,14 @@ export const ItemOrder = styled.div<ItemOrderProps>`
           if ($itemAdded) return theme.color.brand.yellow.secondary
           if (!$itemAdded) return theme.color.brand.purple.secondary
         }};
+      }
 
-        svg {
-        }
+      &:focus {
+        outline: 2px solid
+          ${({ theme, $itemAdded }) => {
+            if ($itemAdded) return theme.color.brand.yellow.primary
+            if (!$itemAdded) return '#996dff'
+          }};
       }
 
       svg {
