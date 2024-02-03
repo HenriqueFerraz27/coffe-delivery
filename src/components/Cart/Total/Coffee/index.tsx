@@ -13,14 +13,7 @@ interface CoffeeProps {
 export const Coffee = ({ coffee: { id, quantity } }: CoffeeProps) => {
   const { decrementItemQuantity, incrementItemQuantity, removeItem } = useCart()
 
-  const coffeeInfos = coffees.find(coffee => coffee.id === id)
-  let coffee = coffees[0]
-
-  if (coffeeInfos) {
-    const newCoffee = { ...coffeeInfos, quantity }
-
-    coffee = newCoffee
-  }
+  const coffee = coffees.find(coffee => coffee.id === id) || coffees[0]
 
   return (
     <S.CoffeeItem>
