@@ -92,7 +92,11 @@ export const ItemContent = styled.div`
   }
 `
 
-export const ItemBuy = styled.div`
+interface ItemOrderProps {
+  $itemAdded: boolean
+}
+
+export const ItemOrder = styled.div<ItemOrderProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,11 +117,20 @@ export const ItemBuy = styled.div`
       width: ${pxToRem(38)};
       height: ${pxToRem(38)};
       border-radius: ${pxToRem(6)};
-      background-color: ${({ theme }) => theme.color.brand.purple.tertiary};
+      background-color: ${({ theme, $itemAdded }) => {
+        if ($itemAdded) return theme.color.brand.yellow.tertiary
+        if (!$itemAdded) return theme.color.brand.purple.tertiary
+      }};
       transition: all 0.1s;
 
       &:hover {
-        background-color: ${({ theme }) => theme.color.brand.purple.secondary};
+        background-color: ${({ theme, $itemAdded }) => {
+          if ($itemAdded) return theme.color.brand.yellow.secondary
+          if (!$itemAdded) return theme.color.brand.purple.secondary
+        }};
+
+        svg {
+        }
       }
 
       svg {

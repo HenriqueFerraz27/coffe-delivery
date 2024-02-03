@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom'
 import * as S from './styles'
 import logoCoffeeDeliveryHorizontal from '/logos/coffee-delivery-horizontal.svg'
-import * as Icon from 'phosphor-react'
-import { useCartItems } from '../../hooks/useCartItems'
+import * as Icon from '@phosphor-icons/react'
 import { Location } from '..'
+import { useCart } from '../../hooks/useCart'
 
 export const Header = () => {
-  const { cartItems } = useCartItems()
+  const { cart } = useCart()
 
   return (
     <S.Header>
@@ -27,9 +27,9 @@ export const Header = () => {
           <S.Cart>
             <NavLink to='/checkout' title='Cart'>
               <Icon.ShoppingCart weight='fill' />
-              {cartItems.length >= 1 && (
+              {cart.length >= 1 && (
                 <span>
-                  <strong>{cartItems.length}</strong>
+                  <strong>{cart.length}</strong>
                 </span>
               )}
             </NavLink>

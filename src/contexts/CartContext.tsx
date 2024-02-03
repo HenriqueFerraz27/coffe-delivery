@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useEffect, useReducer } from 'react'
+import { ReactNode, createContext, useReducer } from 'react'
 import { Item, Order, cartReducer } from '../reducers/cart/reducer'
 import {
   addItemAction,
@@ -45,10 +45,6 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
   const removeItem = (itemId: Item['id']) => {
     dispatch(removeItemAction(itemId))
   }
-
-  useEffect(() => {
-    console.log(cart)
-  }, [cart])
 
   return (
     <CartContext.Provider

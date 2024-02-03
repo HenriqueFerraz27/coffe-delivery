@@ -1,48 +1,63 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as S from './styles'
-import * as Icon from 'phosphor-react'
-import { useCartItems } from '../../../hooks/useCartItems'
-import { CartItem } from '../../../@types/cart-items'
 import { InputCounterItem } from '../..'
 import { formattedPrice } from '../../../utils/formattedPrice'
-import { Coffee } from '../../../@types/coffee'
+import * as Icon from '@phosphor-icons/react'
+import { useCart } from '../../../hooks/useCart'
+
+interface Coffee {
+  id: number
+  image: string
+  tags: string[]
+  name: string
+  description: string
+  price: number
+}
 
 interface CoffeeItemProps {
   coffee: Coffee
 }
 
 export const CoffeeItem = ({
-  coffee: { image, tags, name, description, price },
+  coffee: { id, image, tags, name, description, price },
 }: CoffeeItemProps) => {
-  const { setCartItems } = useCartItems()
-  const [quantityItem, setQuantityItem] = useState(1)
+  const [quantity, setQuantity] = useState(1)
+  const [isItemAdded, setIsItemAdded] = useState(false)
+  const { addItem } = useCart()
 
   const handleIncrement = () => {
-    setQuantityItem(prevQuantityItem => prevQuantityItem + 1)
+    setQuantity(prevQuantity => prevQuantity + 1)
   }
 
   const handleDecrement = () => {
-    if (quantityItem > 1) {
-      setQuantityItem(prevQuantityItem => prevQuantityItem - 1)
+    if (quantity > 1) {
+      setQuantity(prevQuantity => prevQuantity - 1)
     }
   }
 
-  const handleAddNewCoffe = () => {
-    const newItem: CartItem = {
-      id: new Date().getMilliseconds(),
-      image: image,
-      tags: tags,
-      name: name,
-      description: description,
-      price: price,
-      quantity: quantityItem,
+  const handleAddItem = () => {
+    const newItem = { id, quantity }
+
+    addItem(newItem)
+    setIsItemAdded(true)
+    setQuantity(1)
+  }
+
+  useEffect(() => {
+    let timeout: number
+
+    if (isItemAdded) {
+      timeout = setTimeout(() => {
+        setIsItemAdded(false)
+      }, 1000)
     }
 
-    setCartItems(state => {
-      return [...state, newItem]
-    })
-    setQuantityItem(1)
-  }
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout)
+      }
+    }
+  }, [isItemAdded])
 
   return (
     <S.CoffeeItem>
@@ -62,20 +77,22 @@ export const CoffeeItem = ({
         </S.ItemContent>
       </S.ItemContainer>
 
-      <S.ItemBuy>
+      <S.ItemOrder $itemAdded={isItemAdded}>
         <strong>{formattedPrice(price)}</strong>
 
         <div>
           <InputCounterItem
-            quantityItem={quantityItem}
+            quantity={quantity}
             handleDecrement={handleDecrement}
             handleIncrement={handleIncrement}
           />
-          <button onClick={handleAddNewCoffe}>
-            <Icon.ShoppingCart weight='fill' />
+
+          <button onClick={handleAddItem}>
+            {isItemAdded && <Icon.CheckFat weight='fill' />}
+            {!isItemAdded && <Icon.ShoppingCart weight='fill' />}
           </button>
         </div>
-      </S.ItemBuy>
+      </S.ItemOrder>
     </S.CoffeeItem>
   )
 }

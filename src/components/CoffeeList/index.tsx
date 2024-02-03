@@ -9,10 +9,7 @@ export const CoffeeList = () => {
 
       <S.CoffeeList>
         {coffees.map(coffee => {
-          return (
-            <CoffeeItem coffee={coffee}
-            />
-          )
+          return <CoffeeItem key={coffee.id} coffee={coffee} />
         })}
       </S.CoffeeList>
     </S.CoffeeListArticle>

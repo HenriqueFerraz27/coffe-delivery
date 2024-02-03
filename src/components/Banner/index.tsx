@@ -1,5 +1,5 @@
 import * as S from './styles'
-import * as Icon from 'phosphor-react'
+import * as Icon from '@phosphor-icons/react'
 import imageCoffee from '/banner/coffee.png'
 
 export const Banner = () => {

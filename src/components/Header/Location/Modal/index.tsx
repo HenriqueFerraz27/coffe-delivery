@@ -1,12 +1,11 @@
 import * as S from './styles'
-import * as Icon from 'phosphor-react'
+import * as Icon from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
-import { Adress } from '../../..'
+import { AddressInputs } from '../../..'
 
 export const LocationModal = () => {
   return (
     <Dialog.Portal>
-      <S.ModalOverlay />
       <S.ModalContainer>
         <S.ModalContent>
           <Dialog.Title>Endereço de Entrega</Dialog.Title>
@@ -15,7 +14,7 @@ export const LocationModal = () => {
           </Dialog.Description>
 
           <S.ModalForm>
-            <Adress />
+            <AddressInputs />
           </S.ModalForm>
 
           <S.ModalCloseButton>
