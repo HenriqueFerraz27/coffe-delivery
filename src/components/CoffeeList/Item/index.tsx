@@ -26,7 +26,9 @@ export const CoffeeItem = ({
   const { addItem } = useCart()
 
   const handleIncrement = () => {
-    setQuantity(prevQuantity => prevQuantity + 1)
+    if (quantity < 10) {
+      setQuantity(prevQuantity => prevQuantity + 1)
+    }
   }
 
   const handleDecrement = () => {

@@ -1,5 +1,4 @@
 import { produce } from 'immer'
-import { NewOrderFormData } from '../../schemas/newOrderFormValidation'
 import { ActionTypes, Actions } from './actions'
 
 export interface Item {
@@ -7,7 +6,7 @@ export interface Item {
   quantity: number
 }
 
-export interface Order extends NewOrderFormData {
+export interface Order {
   id: number
   items: Item[]
 }
@@ -51,7 +50,7 @@ export const cartReducer = (state: CartState, action: Actions) => {
           item => item.id === action.payload.itemId
         )
 
-        if (itemToIncrement?.id) {
+        if (itemToIncrement?.id && itemToIncrement.quantity < 10) {
           itemToIncrement.quantity += 1
         }
       })
