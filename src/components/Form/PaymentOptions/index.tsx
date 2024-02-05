@@ -1,10 +1,11 @@
-import { useForm } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 import { PaymentRadio } from '../../index'
 import * as S from './styles'
 import * as Icon from '@phosphor-icons/react'
+import { NewOrderData } from '../../../schemas/newOrder'
 
 export const PaymentOptions = () => {
-  const { register, watch } = useForm()
+  const { register, watch } = useFormContext<NewOrderData>()
   const selectedPaymentMethod = watch('paymentMethod')
 
   return (

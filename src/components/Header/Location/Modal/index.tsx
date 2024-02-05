@@ -1,7 +1,7 @@
 import * as S from './styles'
 import * as Icon from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
-import { AddressInputs } from '../../..'
+import { AddressInputs } from '../../../Form/AdressInputs'
 
 export const LocationModal = () => {
   return (

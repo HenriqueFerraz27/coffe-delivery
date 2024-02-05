@@ -11,6 +11,10 @@ export const AddressInput = styled.div`
     background-color: ${({ theme }) => theme.color.basic.support.secondary};
     transition: all 0.1s;
 
+    &#state {
+      text-transform: uppercase;
+    }
+
     &:hover {
       outline: 2px solid ${({ theme }) => theme.color.brand.yellow.secondary};
     }

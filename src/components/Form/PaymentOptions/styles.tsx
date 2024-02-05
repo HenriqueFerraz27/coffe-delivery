@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { pxToRem } from '../../../utils/pxToRem'
 
-export const PaymentOptions = styled.div`
+export const PaymentOptions = styled.form`
   display: flex;
   flex-direction: column;
   gap: ${pxToRem(12)};

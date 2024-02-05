@@ -3,9 +3,17 @@ import { formattedPrice } from '../../../utils/formattedPrice'
 import { Coffee } from '../../'
 import { coffees } from '../../../datas/coffees.json'
 import * as S from './styles'
+import { useFormContext } from 'react-hook-form'
+import { NewOrderData } from '../../../schemas/newOrder'
 
 export const CartTotal = () => {
   const { cart } = useCart()
+
+  const { handleSubmit } = useFormContext<NewOrderData>()
+
+  const handleCreateNewOrder = (data: NewOrderData) => {
+    console.log(data)
+  }
 
   const totalItemsPrice = cart.reduce((total, { id, quantity }) => {
     const coffeeInfo = coffees.find(coffee => coffee.id === id)
@@ -51,6 +59,7 @@ export const CartTotal = () => {
             // className={isDisable ? 'confirm-button--disable' : ''}
             type='submit'
             form='order'
+            onClick={handleSubmit(handleCreateNewOrder)}
           >
             Confirmar Pedido
           </S.ConfirmButton>

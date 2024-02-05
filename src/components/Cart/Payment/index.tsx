@@ -1,12 +1,13 @@
-import { useForm } from 'react-hook-form'
 import * as S from './styles'
 import * as Icon from '@phosphor-icons/react'
 import { PaymentOptions } from '../..'
+import { useFormContext } from 'react-hook-form'
+import { NewOrderData } from '../../../schemas/newOrder'
 
 export const CartPayment = () => {
   const {
     formState: { errors },
-  } = useForm()
+  } = useFormContext<NewOrderData>()
 
   return (
     <S.CartPayment>
@@ -18,7 +19,7 @@ export const CartPayment = () => {
           <p>
             O pagamento é feito na entrega. Escolha a forma que deseja pagar
             {errors.paymentMethod && (
-              <span>{errors.paymentMethod?.message?.toString()}</span>
+              <span>{errors.paymentMethod.message}</span>
             )}
           </p>
         </div>
