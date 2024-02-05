@@ -25,7 +25,7 @@ export const Header = () => {
             <Location />
           </li>
           <S.Cart>
-            <NavLink to='/checkout' title='Cart'>
+            <NavLink to='/cart' title='Cart'>
               <Icon.ShoppingCart weight='fill' />
               {cart.length >= 1 && (
                 <span>

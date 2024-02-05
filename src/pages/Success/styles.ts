@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Container } from '../../styles/components'
 import { pxToRem } from '../../utils/pxToRem'
 
-export const Sucess = styled(Container).attrs({ as: 'section' })`
+export const Success = styled(Container).attrs({ as: 'section' })`
   display: grid;
   gap: ${pxToRem(60)};
   margin: ${pxToRem(40)} auto;
@@ -74,7 +74,7 @@ export const Sucess = styled(Container).attrs({ as: 'section' })`
   }
 `
 
-export const SucessHeader = styled.header`
+export const SuccessHeader = styled.header`
   text-align: center;
 
   h2 {

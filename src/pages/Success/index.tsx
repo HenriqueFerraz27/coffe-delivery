@@ -1,9 +1,9 @@
-import { SucessInfos } from '../../components'
+import { SuccessInfos } from '../../components'
 import * as S from './styles'
 
-function Sucess() {
+function Success() {
   return (
-    <S.Sucess>
+    <S.Success>
       <div className='sucess__container'>
         <div className='sucess__img'>
           <img
@@ -13,18 +13,18 @@ function Sucess() {
         </div>
 
         <div>
-          <S.SucessHeader>
+          <S.SuccessHeader>
             <h2>Uhu! Pedido confirmado</h2>
             <p>Agora é só aguardar que logo o café chegará até você</p>
-          </S.SucessHeader>
+          </S.SuccessHeader>
 
-          <SucessInfos className='sucess__infos__01' />
+          <SuccessInfos className='sucess__infos__01' />
         </div>
       </div>
 
-      <SucessInfos className='sucess__infos__02' />
-    </S.Sucess>
+      <SuccessInfos className='sucess__infos__02' />
+    </S.Success>
   )
 }
 
-export default Sucess
+export default Success

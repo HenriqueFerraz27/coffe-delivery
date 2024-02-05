@@ -7,12 +7,16 @@ import { useFormContext } from 'react-hook-form'
 import { NewOrderData } from '../../../schemas/newOrder'
 
 export const CartTotal = () => {
-  const { cart } = useCart()
+  const { cart, checkout } = useCart()
 
   const { handleSubmit } = useFormContext<NewOrderData>()
 
   const handleCreateNewOrder = (data: NewOrderData) => {
-    console.log(data)
+    if (cart.length === 0) {
+      return alert('É preciso ter pelo menos um item no carrinho')
+    }
+
+    checkout(data)
   }
 
   const totalItemsPrice = cart.reduce((total, { id, quantity }) => {

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { pxToRem } from '../../utils/pxToRem'
 
-export const SucessInfos = styled.div`
+export const SuccessInfos = styled.div`
   padding: 1px;
   border-top-left-radius: ${pxToRem(8)};
   border-bottom-right-radius: ${pxToRem(8)};

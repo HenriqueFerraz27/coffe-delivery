@@ -1,12 +1,13 @@
 import { produce } from 'immer'
 import { ActionTypes, Actions } from './actions'
+import { NewOrderData } from '../../schemas/newOrder'
 
 export interface Item {
   id: number
   quantity: number
 }
 
-export interface Order {
+export interface Order extends NewOrderData {
   id: number
   items: Item[]
 }
@@ -63,6 +64,21 @@ export const cartReducer = (state: CartState, action: Actions) => {
         )
         draft.cart.splice(itemToRemoveId, 1)
       })
+      break
+
+    case ActionTypes.CHECKOUT_CART:
+      return produce(state, draft => {
+        const newOrder = {
+          id: new Date().getTime(),
+          items: state.cart,
+          ...action.payload.order,
+        }
+        draft.orders.push(newOrder)
+        draft.cart = []
+
+        action.payload.callback(`/order/${newOrder.id}/success`)
+      })
+      break
 
     default:
       return state
