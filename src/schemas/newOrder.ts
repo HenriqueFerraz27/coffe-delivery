@@ -1,9 +1,9 @@
 import * as zod from 'zod'
 
-const newOrder = zod.object({
+export const newOrder = zod.object({
   cep: zod.string().min(9, 'Informe o CEP').max(9, 'Informe o CEP'),
   street: zod.string().min(1, 'Informe a rua'),
-  number: zod.string().min(1, 'Informe o número'),
+  number: zod.number().min(1, 'Informe o número'),
   complement: zod.string(),
   neighborhood: zod.string().min(1, 'Informe o bairro'),
   city: zod.string().min(1, 'Informe a cidade'),
