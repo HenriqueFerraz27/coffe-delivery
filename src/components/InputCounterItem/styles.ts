@@ -1,91 +1,51 @@
 import styled from 'styled-components'
 import { pxToRem } from '../../utils/pxToRem'
-import { Container } from '../../styles/components'
 
-export const Header = styled(Container).attrs({ as: 'header' })`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: ${pxToRem(20)};
-  min-height: ${pxToRem(100)};
+export const InputCounterItem = styled.div`
+  display: inline-block;
+  position: relative;
+  transition: all 0.1s;
 
-  h2 img {
-    height: ${pxToRem(40)};
+  &:hover input {
+    outline: 2px solid #996dff;
+  }
+
+  input {
+    width: ${pxToRem(72)};
+    height: ${pxToRem(38)};
+    color: ${({ theme }) => theme.color.basic.base.primary};
+    text-align: center;
+    border: none;
+    border-radius: ${pxToRem(6)};
+    background-color: ${({ theme }) => theme.color.basic.support.tertiary};
     transition: all 0.1s;
 
-    &:hover {
-      transform: scale(1.1);
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
     }
   }
 
-  nav ul {
+  div {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    gap: ${pxToRem(12)};
-
-    li {
-      border-radius: ${pxToRem(6)};
-    }
-
-    svg {
-      width: ${pxToRem(22)};
-      height: ${pxToRem(22)};
-    }
-    a,
-    button {
-      min-height: ${pxToRem(38)};
-    }
-  }
-`
-
-export const Location = styled.li`
-  transition: all 0.1s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  button {
-    align-items: center;
-    gap: ${pxToRem(4)};
+    justify-content: space-between;
+    width: 100%;
     padding: 0 ${pxToRem(8)};
-    color: ${({ theme }) => theme.color.brand.purple.tertiary};
-    font-size: ${({ theme }) => theme.typography.size.sm};
-    border-radius: ${pxToRem(6)};
-    background-color: ${({ theme }) => theme.color.brand.purple.primary};
-
-    svg {
-      color: ${({ theme }) => theme.color.brand.purple.secondary};
-    }
 
     span {
-      display: none;
-    }
-  }
+      color: ${({ theme }) => theme.color.brand.purple.secondary};
+      font-size: ${({ theme }) => theme.typography.size['2xl']};
+      line-height: 0;
+      letter-spacing: -2px;
+      cursor: pointer;
+      transition: all 0.1s;
 
-  @media (min-width: 576px) {
-    button span {
-      display: initial;
-    }
-  }
-`
-
-export const Cart = styled.li`
-  background-color: ${({ theme }) => theme.color.brand.yellow.primary};
-  transition: all 0.1s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  a {
-    padding: 0 ${pxToRem(8)};
-
-    &:focus {
-      outline: 2px solid ${({ theme }) => theme.color.brand.yellow.secondary};
-    }
-
-    svg {
-      color: ${({ theme }) => theme.color.brand.yellow.secondary};
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 `
