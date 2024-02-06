@@ -8,8 +8,7 @@ import { NewOrderData } from '../../../schemas/newOrder'
 
 export const CartTotal = () => {
   const { cart, checkout } = useCart()
-
-  const { handleSubmit } = useFormContext<NewOrderData>()
+  const { handleSubmit, watch } = useFormContext<NewOrderData>()
 
   const handleCreateNewOrder = (data: NewOrderData) => {
     if (cart.length === 0) {
@@ -35,6 +34,14 @@ export const CartTotal = () => {
 
   const totalPrice = totalItemsPrice + shippingPrice
 
+  const isDisable =
+    watch('cep') &&
+    watch('street') &&
+    watch('number') &&
+    watch('neighborhood') &&
+    watch('city') &&
+    watch('state')
+
   return (
     <S.CartTotal>
       <S.Coffees>
@@ -59,14 +66,14 @@ export const CartTotal = () => {
             </div>
           </S.CoffeesTotal>
 
-          <S.ConfirmButton
-            // className={isDisable ? 'confirm-button--disable' : ''}
+          <S.ConfirmOrderButton
+            className={!isDisable ? 'confirm-button--disable' : ''}
             type='submit'
             form='order'
             onClick={handleSubmit(handleCreateNewOrder)}
           >
             Confirmar Pedido
-          </S.ConfirmButton>
+          </S.ConfirmOrderButton>
         </div>
       </S.Coffees>
     </S.CartTotal>
