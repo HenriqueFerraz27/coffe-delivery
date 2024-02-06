@@ -9,8 +9,17 @@ import { Header } from './components'
 import { Outlet } from 'react-router-dom'
 
 function App() {
+  const storedAddressAsJSON = localStorage.getItem(
+    '@coffee-delivery:address-1.0.0'
+  )
+
+  const address = storedAddressAsJSON && JSON.parse(storedAddressAsJSON)
+
   const NewOrderFormContext = useForm<NewOrderData>({
     resolver: zodResolver(newOrder),
+    defaultValues: {
+      ...address,
+    },
   })
 
   return (
