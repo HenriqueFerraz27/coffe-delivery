@@ -23,17 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.color.basic.auxiliary.tertiary};
   }
 
-  @media (max-width: 1024px) {
-    html {
-      font-size: 93.75%;
-    }
-  }
 
-  @media (max-width: 768px) {
-    html {
-      font-size: 87.5%;
-    }
-  }
 
   ul,
   ol {
