@@ -8,17 +8,44 @@ export const AddressInputs = () => {
   const {
     register,
     watch,
+    setValue,
+    setFocus,
+    setError,
     formState: { errors },
   } = useFormContext<NewOrderData>()
 
-  const formData = watch()
+  const address = watch()
 
   useEffect(() => {
     localStorage.setItem(
       '@coffee-delivery:address-1.0.0',
-      JSON.stringify(formData)
+      JSON.stringify(address)
     )
-  }, [formData])
+  }, [address])
+
+  const handleAddressBlur = () => {
+    const cepFormat = watch('cep').replace(/[^0-9]/g, '')
+
+    if (cepFormat.length !== 8) {
+      setError('cep', {
+        type: 'invalid_value',
+        message: 'Informe um CEP válido',
+      })
+      return
+    }
+
+    fetch(`https://viacep.com.br/ws/${cepFormat}/json/`)
+      .then(response => response.json())
+      .then(data => {
+        const { logradouro, bairro, localidade, uf } = data
+
+        setValue('street', logradouro)
+        setValue('neighborhood', bairro)
+        setValue('city', localidade)
+        setValue('state', uf)
+        setFocus('number')
+      })
+  }
 
   return (
     <>
@@ -28,6 +55,7 @@ export const AddressInputs = () => {
           placeholder='CEP*'
           mask='99999-999'
           {...register('cep')}
+          onBlur={handleAddressBlur}
         />
         {errors.cep && <span>{errors.cep.message}</span>}
       </S.AddressInput>
