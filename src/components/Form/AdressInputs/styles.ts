@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import { pxToRem } from '../../../utils/pxToRem'
 
 export const AddressInput = styled.div`
-  input {
+  input,
+  select {
     width: 100%;
     padding: ${pxToRem(12)};
     color: ${({ theme }) => theme.color.basic.base.secondary};
@@ -11,8 +12,9 @@ export const AddressInput = styled.div`
     background-color: ${({ theme }) => theme.color.basic.support.secondary};
     transition: all 0.1s;
 
-    &#state {
-      text-transform: uppercase;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
     }
 
     &:hover {
