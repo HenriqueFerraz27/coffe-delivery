@@ -2,12 +2,23 @@ import { useFormContext } from 'react-hook-form'
 import * as S from './styles'
 import { NewOrderData } from '../../../schemas/newOrder'
 import ReactInputMask from 'react-input-mask'
+import { useEffect } from 'react'
 
 export const AddressInputs = () => {
   const {
     register,
+    watch,
     formState: { errors },
   } = useFormContext<NewOrderData>()
+
+  const formData = watch()
+
+  useEffect(() => {
+    localStorage.setItem(
+      '@coffee-delivery:address-1.0.0',
+      JSON.stringify(formData)
+    )
+  }, [formData])
 
   return (
     <>
