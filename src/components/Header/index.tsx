@@ -24,6 +24,7 @@ export const Header = () => {
           <li>
             <Location />
           </li>
+
           <S.Cart>
             <NavLink to='/cart' title='Cart'>
               <Icon.ShoppingCart weight='fill' />

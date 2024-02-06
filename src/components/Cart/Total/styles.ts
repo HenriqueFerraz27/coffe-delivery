@@ -66,7 +66,7 @@ export const CoffeesTotal = styled.div`
   }
 `
 
-export const ConfirmOrderOrder = styled.button`
+export const ConfirmOrderButton = styled.button`
   height: ${pxToRem(46)};
   width: 100%;
   margin-top: ${pxToRem(24)};

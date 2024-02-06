@@ -12,7 +12,7 @@ export const PaymentRadio = forwardRef(function PaymentRadio(
 ) {
   return (
     <S.PaymentRadio data-state={isChecked}>
-      <input type='radio' value='credit' ref={ref} {...rest} />
+      <input type='radio' ref={ref} {...rest} />
       {children}
     </S.PaymentRadio>
   )

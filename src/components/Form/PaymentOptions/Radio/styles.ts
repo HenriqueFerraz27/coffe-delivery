@@ -14,6 +14,7 @@ export const PaymentRadio = styled.label`
   border-radius: ${pxToRem(7)};
   background-color: ${({ theme }) => theme.color.basic.support.tertiary};
   transition: all 0.1s;
+  cursor: pointer;
 
   &:hover {
     background-color: ${({ theme }) => theme.color.basic.support.secondary};

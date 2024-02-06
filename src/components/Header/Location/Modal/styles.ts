@@ -43,6 +43,17 @@ export const ModalContent = styled(Dialog.Content)`
   }
 `
 
+export const ModalHeader = styled.header`
+  display: flex;
+  gap: ${pxToRem(8)};
+
+  svg {
+    min-width: ${pxToRem(22)};
+    min-height: ${pxToRem(22)};
+    color: ${({ theme }) => theme.color.brand.yellow.tertiary};
+  }
+`
+
 export const ModalForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -90,10 +101,23 @@ export const ModalForm = styled.form`
       }
     }
   }
+`
 
-  button[type='submit'] {
-    margin-top: ${pxToRem(24)};
-    font-weight: ${({ theme }) => theme.typography.weight.bold};
-    transition: all 0.1s;
+export const ModalSaveButton = styled(Dialog.Close)`
+  height: ${pxToRem(46)};
+  width: 100%;
+  margin-top: ${pxToRem(12)};
+  color: ${({ theme }) => theme.color.basic.auxiliary.secondary};
+  font-weight: ${({ theme }) => theme.typography.weight.bold};
+  border-radius: ${pxToRem(6)};
+  background-color: ${({ theme }) => theme.color.brand.yellow.secondary};
+  transition: all 0.1s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.brand.yellow.tertiary};
+  }
+
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.color.brand.yellow.secondary};
   }
 `
