@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Ignite Feed" src="./public/logos/coffee-delivery-horizontal.svg" width="200px" />
+  <img alt="Coffee Delivery" src="./public/logos/coffee-delivery-horizontal.svg" width="200px" />
 </h1>
 
 <div align="center">
@@ -17,23 +17,31 @@
 ## 📸 Project View
 
 <div align="center">
-  <!-- <img alt="Ignite Feed - Desktop and Mobile" src="./github/ignite-feed-desktop-mobile.png">
-  <img alt="Ignite Feed - GIF" src="./github/ignite-feed-gif.gif"> -->
+  <img alt="Coffee Delivery - Desktop and Mobile" src="./github/coffee-delivery-desktop-mobile.png">
+  <img alt="Coffee Delivery - GIF" src="./github/coffee-delivery-gif.gif">
 </div>
 
 ## ℹ About the Project
 
 <p>
-  Ignite Feed is the representation of a content-sharing platform through posts and comments. The goal of this project was to provide a real and practical development environment dedicated to applying the essential principles of React JS. This was an initial project developed during my journey on the React JS track designed by Rocketseat, where I had the opportunity to deepen my knowledge in React JS, and now I share this experience with you.
+  Coffee Delivery is a project that features the functionalities of a delivery service. Developed based on the knowledge acquired over time, this project represented a journey of learning and overcoming challenges. By using the TypeScript and ReactJS technologies, along with various complementary libraries, I was able to explore and apply advanced concepts of web development. From the architecture of the application to the implementation of interactive and usability features.
 </p>
 
 ## 🏗 Main Features
 
-- [x] Comments: Users can comment on other users' posts.
+- [x] Add Item: Allows the user to add an item to their order.
 
-- [x] Like Comments: Users have the ability to like comments.
+- [x] Increment Item: Enables the user to increase the quantity of an item in their order.
 
-- [x] Delete Comments: Users have the ability to delete comments on posts.
+- [x] Decrement Item: Allows the user to decrease the quantity of an item in their order.
+
+- [x] Delete Item: Allows the user to remove an item from their order.
+
+- [x] Address Form: Enables the user to input the delivery address for the order.
+
+- [x] Payment Method: Allows the user to select the payment method for the order.
+
+- [x] Complete Order: Allows the user to finalize and submit the order for processing.
 
 ## ⚙️ Technologies
 
@@ -43,14 +51,14 @@
 
 ## 🧪 Test the Project - Click on the button
 
-<a href="https://ignite-feed-black-mu.vercel.app/">
+<a href="https://coffe-delivery-eight-lyart.vercel.app/">
   <img alt="Test the Project - Vercel" src="./github/vercel-button.png">
 </a>
 
 ## 🎨 Layout
 
-<a align="center" href="https://www.figma.com/community/file/1113573231685349036">
-  <img alt="Layout" src="./github/ignite-feed-cover.png">
+<a align="center" href="https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery">
+  <img alt="Layout" src="./github/coffee-delivery-cover.png">
 </a>
 
 ## 💻 Repository Cloning
@@ -63,7 +71,7 @@
 2. **Clone the Repository:** Make a clone of this repository to your development environment using the following command:
 
 ```bash
-git clone https://github.com/HenriqueFerraz27/ignite-feed.git
+git clone https://github.com/HenriqueFerraz27/coffee-delivery.git
 ```
 
 3. **Dependency Installation:** Navigate to the project folder and install the necessary dependencies with the following command:
@@ -78,7 +86,7 @@ npm install # or yarn install
 npm run dev # or yarn dev
 ```
 
-5. **Application Access:** Open your browser and access the link provided to use Ignite Feed.
+5. **Application Access:** Open your browser and access the link provided to use Coffee Delivery.
 
 ## 🤝 Contributions
 

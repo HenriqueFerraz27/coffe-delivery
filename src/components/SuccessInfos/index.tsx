@@ -35,7 +35,7 @@ export const SuccessInfos = ({ ...rest }: SuccessInfosProps) => {
               </strong>
             </p>
             <p>
-              {orderInfo.neighborhood} - {orderInfo.city},{orderInfo.state}
+              {orderInfo.neighborhood} - {orderInfo.city}, {orderInfo.state}
             </p>
           </div>
         </li>
